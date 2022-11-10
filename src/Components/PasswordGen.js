@@ -4,17 +4,14 @@ import {CopyToClipboard} from 'react-copy-to-clipboard';
 import logo from '../icon/copy.png'
 
 const PasswordGen = () => {
-const [output,setOutput ] = useState("");
+const [output,setOutput  ] = useState("null");
+        const [isUpperChecked,setUpperChecked]= useState(false);
+        const [isLowerChecked,setLowerChecked]= useState(false);
+        const [isNumberChecked,setNumberChecked]= useState(false);
+        const [isSymbolChecked,setSymbolChecked]= useState(false);
     
     let lengthVar = 0;
-    let checkUpper =false
-    let checkLower =false
-    let checkNumber = false
-    let checkSymbol =false
-
-
-
-  const passwordGenerate = () => {
+     const passwordGenerate = () => {
   
     const upperCaseChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     const lowerCaseChar = "abcdefghijklmnopqrstuvwxyz";
@@ -37,7 +34,7 @@ const [output,setOutput ] = useState("");
         finalChar=finalChar+symbol
     }
 
-    for (let i = 0; i <= length; i++) {
+    for (let i = 0; i < length; i++) {
         let index = Math.floor(Math.random()*finalChar.length+1)
         password = password+finalChar.charAt(index)
     }
@@ -73,16 +70,16 @@ const [output,setOutput ] = useState("");
       </div>
       <br />
       <div className="checkbox">
-      <input onClick={()=>{checkUpper=!checkUpper}} type="checkbox" id="UpperCase" />
+      <input onClick={()=>{setUpperChecked(!isUpperChecked)}} type="checkbox" id="UpperCase" />
       <label htmlFor="UpperCase">Upper Case</label>
       <br />
-      <input onClick={()=>{checkLower=!checkLower}} type="checkbox" id="LowerCase" />
+      <input onClick={()=>{setLowerChecked(!isLowerChecked)}} type="checkbox" id="LowerCase" />
       <label htmlFor="LowerCase">Lower Case</label>
       <br />
-      <input onClick={()=>{checkNumber=!checkNumber}} type="checkbox" id="IncludeNumbers" />
+      <input onClick={()=>{setNumberChecked(!isNumberChecked)}} type="checkbox" id="IncludeNumbers" />
       <label htmlFor="IncludeNumbers">Include Number</label>
       <br />
-      <input onClick={()=>{checkSymbol=!checkSymbol}} type="checkbox" id="IncludeSymbols" />
+      <input onClick={()=>{setSymbolChecked(!isSymbolChecked)}} type="checkbox" id="IncludeSymbols" />
       <label htmlFor="IncludeSymbols">Include Symbol</label>
       </div >
       

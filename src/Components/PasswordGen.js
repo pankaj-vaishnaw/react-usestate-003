@@ -79,11 +79,11 @@ const [output,setOutput ] = useState("");
       <input onClick={()=>{checkLower=!checkLower}} type="checkbox" id="LowerCase" />
       <label htmlFor="LowerCase">Lower Case</label>
       <br />
-      <input onClick={()=>{checkmiddle=!checkmiddle}} type="checkbox" id="IncludeNumbers" />
-      <label htmlFor="IncludeNumbers">Include Numbers</label>
+      <input onClick={()=>{checkNumber=!checkNumber}} type="checkbox" id="IncludeNumbers" />
+      <label htmlFor="IncludeNumbers">Include Number</label>
       <br />
-      <input onClick={()=>{checkLast=!checkLast}} type="checkbox" id="IncludeSymbols" />
-      <label htmlFor="IncludeSymbols">Include Symbols</label>
+      <input onClick={()=>{checkSymbol=!checkSymbol}} type="checkbox" id="IncludeSymbols" />
+      <label htmlFor="IncludeSymbols">Include Symbol</label>
       </div >
       
       <button className="btngen" onClick={passwordGenerate}>Generate Password</button>

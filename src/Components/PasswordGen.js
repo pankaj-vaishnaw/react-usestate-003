@@ -6,7 +6,7 @@ import logo from '../icon/copy.png'
 const PasswordGen = () => {
 const [output,setOutput ] = useState("");
     
-    var lengthVar = 0;
+    let lengthVar = 0;
     let checkUpper =false
     let checkLower =false
     let checkNumber = false
@@ -37,7 +37,7 @@ const [output,setOutput ] = useState("");
         finalChar=finalChar+symbol
     }
 
-    for (let i = 0; i < length; i++) {
+    for (let i = 0; i <= length; i++) {
         let index = Math.floor(Math.random()*finalChar.length+1)
         password = password+finalChar.charAt(index)
     }
